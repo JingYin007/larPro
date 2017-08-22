@@ -50,7 +50,6 @@ class ControllerDispatcher
     public function dispatch(Route $route, Request $request, $controller, $method)
     {
         $instance = $this->makeController($controller);
-
         return $this->callWithinStack($instance, $route, $request, $method);
     }
 
