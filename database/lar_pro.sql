@@ -10,16 +10,16 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2017-08-23 09:30:35
+Date: 2017-08-23 17:52:31
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for `articles`
+-- Table structure for `lar_articles`
 -- ----------------------------
-DROP TABLE IF EXISTS `articles`;
-CREATE TABLE `articles` (
+DROP TABLE IF EXISTS `lar_articles`;
+CREATE TABLE `lar_articles` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `body` text COLLATE utf8_unicode_ci,
@@ -30,23 +30,41 @@ CREATE TABLE `articles` (
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
--- Records of articles
+-- Records of lar_articles
 -- ----------------------------
-INSERT INTO `articles` VALUES ('2', 'Title 1', 'Body 1', '1', '2017-08-22 03:55:36', '2017-08-22 03:55:36');
-INSERT INTO `articles` VALUES ('3', 'Title 2', 'Body 2', '1', '2017-08-22 03:55:36', '2017-08-22 03:55:36');
-INSERT INTO `articles` VALUES ('4', 'Title 3', 'Body 3', '1', '2017-08-22 03:55:36', '2017-08-22 03:55:36');
-INSERT INTO `articles` VALUES ('6', 'Title 5', 'Body 5', '1', '2017-08-22 03:55:36', '2017-08-22 03:55:36');
-INSERT INTO `articles` VALUES ('7', 'Title 6', 'Body 6', '1', '2017-08-22 03:55:37', '2017-08-22 03:55:37');
-INSERT INTO `articles` VALUES ('8', 'Title 7777777777', 'Body 77777777', '1', '2017-08-22 03:55:37', '2017-08-22 18:03:02');
-INSERT INTO `articles` VALUES ('9', 'Title 8', 'Body 8', '1', '2017-08-22 03:55:37', '2017-08-22 03:55:37');
-INSERT INTO `articles` VALUES ('11', '你是那个妖精', '要你管啊！！！', '1', '2017-08-22 17:46:37', '2017-08-22 17:46:37');
-INSERT INTO `articles` VALUES ('12', '我是谁', '我怎么知道你是谁！爱谁谁。。。', '1', '2017-08-22 17:47:55', '2017-08-22 17:47:55');
+INSERT INTO `lar_articles` VALUES ('2', 'Title 1', 'Body 1', '1', '2017-08-22 03:55:36', '2017-08-22 03:55:36');
+INSERT INTO `lar_articles` VALUES ('3', 'Title 2', 'Body 2', '1', '2017-08-22 03:55:36', '2017-08-22 03:55:36');
+INSERT INTO `lar_articles` VALUES ('4', 'Title 3', 'Body 3', '1', '2017-08-22 03:55:36', '2017-08-22 03:55:36');
+INSERT INTO `lar_articles` VALUES ('6', 'Title 5', 'Body 5', '1', '2017-08-22 03:55:36', '2017-08-22 03:55:36');
+INSERT INTO `lar_articles` VALUES ('7', 'Title 6', 'Body 6', '1', '2017-08-22 03:55:37', '2017-08-22 03:55:37');
+INSERT INTO `lar_articles` VALUES ('8', 'Title 7777777777', 'Body 77777777', '1', '2017-08-22 03:55:37', '2017-08-22 18:03:02');
+INSERT INTO `lar_articles` VALUES ('9', 'Title 8', 'Body 8', '1', '2017-08-22 03:55:37', '2017-08-22 03:55:37');
+INSERT INTO `lar_articles` VALUES ('11', '你是那个妖精', '要你管啊！！！', '1', '2017-08-22 17:46:37', '2017-08-22 17:46:37');
+INSERT INTO `lar_articles` VALUES ('12', '我是谁', '我怎么知道你是谁！爱谁谁。。。', '1', '2017-08-22 17:47:55', '2017-08-22 17:47:55');
 
 -- ----------------------------
--- Table structure for `comments`
+-- Table structure for `lar_baby`
 -- ----------------------------
-DROP TABLE IF EXISTS `comments`;
-CREATE TABLE `comments` (
+DROP TABLE IF EXISTS `lar_baby`;
+CREATE TABLE `lar_baby` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) DEFAULT NULL,
+  `age` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of lar_baby
+-- ----------------------------
+INSERT INTO `lar_baby` VALUES ('5', 'Feaa', '41');
+INSERT INTO `lar_baby` VALUES ('6', 'Feaa', '41');
+INSERT INTO `lar_baby` VALUES ('7', '赵云', '48');
+
+-- ----------------------------
+-- Table structure for `lar_comments`
+-- ----------------------------
+DROP TABLE IF EXISTS `lar_comments`;
+CREATE TABLE `lar_comments` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `nickname` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -59,10 +77,31 @@ CREATE TABLE `comments` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
--- Records of comments
+-- Records of lar_comments
 -- ----------------------------
-INSERT INTO `comments` VALUES ('1', 'bababa', '18831605741@163.com', 'www', '这倒是个有意思的问题................', '2', '2017-08-23 09:17:23', '2017-08-23 09:17:23');
-INSERT INTO `comments` VALUES ('2', 'A', 'qinminghui1230@163.com', 'dsdsds', '@bababa sdsadasdasdasdasdas', '2', '2017-08-23 09:18:31', '2017-08-23 09:18:31');
+INSERT INTO `lar_comments` VALUES ('1', 'bababa', '18831605741@163.com', 'www', '这倒是个有意思的问题................', '2', '2017-08-23 09:17:23', '2017-08-23 09:17:23');
+INSERT INTO `lar_comments` VALUES ('2', 'A', 'qinminghui1230@163.com', 'dsdsds', '@bababa sdsadasdasdasdasdas', '2', '2017-08-23 09:18:31', '2017-08-23 09:18:31');
+
+-- ----------------------------
+-- Table structure for `lar_users`
+-- ----------------------------
+DROP TABLE IF EXISTS `lar_users`;
+CREATE TABLE `lar_users` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_email_unique` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- ----------------------------
+-- Records of lar_users
+-- ----------------------------
+INSERT INTO `lar_users` VALUES ('1', 'mutou', '930959695@qq.com', '$2y$10$oCJd.UkBNqfFNg6ovF/4/OVr2FX0wHxg6E3fraNKczqBy4cr5EcCS', 'xmA7XxXz9gps6fv6l9prY3zWlcRWQb9qPEcDqH2GT3J2sq8Pfs76iQhzVnf3', '2017-08-22 02:59:23', '2017-08-22 17:10:40');
 
 -- ----------------------------
 -- Table structure for `migrations`
@@ -97,24 +136,3 @@ CREATE TABLE `password_resets` (
 -- ----------------------------
 -- Records of password_resets
 -- ----------------------------
-
--- ----------------------------
--- Table structure for `users`
--- ----------------------------
-DROP TABLE IF EXISTS `users`;
-CREATE TABLE `users` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- ----------------------------
--- Records of users
--- ----------------------------
-INSERT INTO `users` VALUES ('1', 'mutou', '930959695@qq.com', '$2y$10$oCJd.UkBNqfFNg6ovF/4/OVr2FX0wHxg6E3fraNKczqBy4cr5EcCS', 'xmA7XxXz9gps6fv6l9prY3zWlcRWQb9qPEcDqH2GT3J2sq8Pfs76iQhzVnf3', '2017-08-22 02:59:23', '2017-08-22 17:10:40');
