@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2017-08-23 17:52:31
+Date: 2017-08-24 19:11:28
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -35,7 +35,6 @@ CREATE TABLE `lar_articles` (
 INSERT INTO `lar_articles` VALUES ('2', 'Title 1', 'Body 1', '1', '2017-08-22 03:55:36', '2017-08-22 03:55:36');
 INSERT INTO `lar_articles` VALUES ('3', 'Title 2', 'Body 2', '1', '2017-08-22 03:55:36', '2017-08-22 03:55:36');
 INSERT INTO `lar_articles` VALUES ('4', 'Title 3', 'Body 3', '1', '2017-08-22 03:55:36', '2017-08-22 03:55:36');
-INSERT INTO `lar_articles` VALUES ('6', 'Title 5', 'Body 5', '1', '2017-08-22 03:55:36', '2017-08-22 03:55:36');
 INSERT INTO `lar_articles` VALUES ('7', 'Title 6', 'Body 6', '1', '2017-08-22 03:55:37', '2017-08-22 03:55:37');
 INSERT INTO `lar_articles` VALUES ('8', 'Title 7777777777', 'Body 77777777', '1', '2017-08-22 03:55:37', '2017-08-22 18:03:02');
 INSERT INTO `lar_articles` VALUES ('9', 'Title 8', 'Body 8', '1', '2017-08-22 03:55:37', '2017-08-22 03:55:37');
@@ -50,15 +49,23 @@ CREATE TABLE `lar_baby` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(20) DEFAULT NULL,
   `age` int(11) DEFAULT NULL,
+  `created_at` int(11) DEFAULT NULL,
+  `updated_at` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of lar_baby
 -- ----------------------------
-INSERT INTO `lar_baby` VALUES ('5', 'Feaa', '41');
-INSERT INTO `lar_baby` VALUES ('6', 'Feaa', '41');
-INSERT INTO `lar_baby` VALUES ('7', '赵云', '48');
+INSERT INTO `lar_baby` VALUES ('5', 'Kitty', '55', null, '1503571013');
+INSERT INTO `lar_baby` VALUES ('6', 'Feaa', '55', null, '1503571013');
+INSERT INTO `lar_baby` VALUES ('7', '赵云', '55', null, '1503571013');
+INSERT INTO `lar_baby` VALUES ('8', 'TTok', '22', '2017', '2017');
+INSERT INTO `lar_baby` VALUES ('9', 'TDegs', '12', null, null);
+INSERT INTO `lar_baby` VALUES ('10', 'TDegs', '12', '1503568528', '1503568528');
+INSERT INTO `lar_baby` VALUES ('11', '太乙真人', '122', '1503569124', '1503569124');
+INSERT INTO `lar_baby` VALUES ('12', '太乙真人2', null, '1503569558', '1503569558');
+INSERT INTO `lar_baby` VALUES ('13', '太乙真人33', null, '1503569806', '1503569806');
 
 -- ----------------------------
 -- Table structure for `lar_comments`
