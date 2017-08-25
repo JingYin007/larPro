@@ -78,3 +78,18 @@ Route::get('baby/test2', 'BabyController@test2');
 Route::any('orm1', 'BabyController@orm1');
 Route::any('orm2', 'BabyController@orm2');
 Route::any('orm3', 'BabyController@orm3');
+
+Route::any('section', 'BabyController@section');
+Route::any('request', 'BabyController@request');
+
+
+Route::any('session', 'BabyController@session');
+Route::any('session2', 'BabyController@session2');
+Route::any('response', 'BabyController@response');
+Route::any('response2', 'BabyController@response2');
+
+
+
+
+
+

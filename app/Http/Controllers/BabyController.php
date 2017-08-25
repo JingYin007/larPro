@@ -10,7 +10,9 @@ namespace App\Http\Controllers;
 
 
 use App\Baby;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class BabyController extends Controller
 {
@@ -180,8 +182,75 @@ class BabyController extends Controller
         $res = Baby::all();
         dd($res);
     }
+    public function section(){
+        $babys = Baby::get();
+        $data = [
+            'word' => 'Hello my Dear Baby',
+            'arr' => ['Tomas','Loros'],
+            'name' => 'moT',
+            'babys' => $babys,
+        ];
+        return view('baby.section',$data);
+    }
 
+    public function request(Request $request){
+        $data = $request->all();
 
+        echo $request->method();
+
+        var_dump($request->is('baby/*'));
+
+        var_dump( $request->ajax());
+        var_dump($data);
+        echo $request->url();
+    }
+
+    /**
+     * 使用session的三种方式
+     * @param Request $request
+     */
+    public function session(Request $request){
+        $request->session()->put('se1','Nobby');
+        echo $request->session()->get('se1');
+
+        session()->put('se2','HD');
+        echo $request->session()->get('se2');
+
+        Session::put('se3','KOOOO');
+        echo Session::get('se3');
+        echo Session::get('se4','no');
+
+        Session::flash('key-flash','val-flash');
+    }
+    public function session2(Request $request){
+        $res = $request->session()->all();
+
+        $request->session()->forget('se3');
+        var_dump($res);
+    }
+
+    /**
+     * 进行 响应的功能实现
+     */
+    public function response(){
+       /* $data = [
+            'status' => 1,
+            'message' => 'success',
+            'data' => ['tag' => 1,'msg' => 'sorry'],
+        ];
+        //响应json
+        return response()->json($data);*/
+
+        //重定向
+        return redirect('response2')
+            ->with('msg','我是快闪数据');
+
+    }
+    public function response2(){
+
+        var_dump('response2');
+        return Session::get('msg');
+    }
 
 
 
