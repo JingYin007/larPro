@@ -252,7 +252,18 @@ class BabyController extends Controller
         return Session::get('msg');
     }
 
-
+    /**
+     * 测试 Controller 中间件 Middleware 的使用
+     */
+    public function activity(){
+        return '活动就要开始了，敬请期待';
+    }
+    public function activity1(){
+        return '活动进行中，欢迎您的参与！！！！';
+    }
+    public function activity2(){
+        return '活动进行中，欢迎您的参与@@@@';
+    }
 
 
 
