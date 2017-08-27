@@ -88,8 +88,13 @@ Route::any('session2', 'BabyController@session2');
 Route::any('response', 'BabyController@response');
 Route::any('response2', 'BabyController@response2');
 
-
-
+//宣传页面
+Route::any('activity', 'BabyController@activity');
+//互动页面
+Route::group(['middleware' => ['activity']],function (){
+    Route::any('activity1', 'BabyController@activity1');
+    Route::any('activity2', 'BabyController@activity2');
+});
 
 
 
