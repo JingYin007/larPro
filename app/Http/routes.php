@@ -97,4 +97,5 @@ Route::group(['middleware' => ['activity']],function (){
 });
 
 Route::any('student/index', 'StudentController@index');
-
+Route::any('student/create', 'StudentController@create');
+Route::any('student/save', 'StudentController@save');

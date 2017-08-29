@@ -2,7 +2,7 @@
 
 @section('content')
 
-@include('common/message')
+	@include('common/message')
 	<!-- 自定义内容 -->
 	<div class="panel panel-default">
 		<div class="panel-heading">学生列表</div>
@@ -14,47 +14,32 @@
 					<th>姓名</th>
 					<th>年龄</th>
 					<th>性别</th>
+					<th>添加时间</th>
 					<th width="120">操作</th>
 				</tr>
 				</thead>
 				<tbody>
-				<tr>
-					<th>1001</th>
-					<td>name1</td>
-					<td>18</td>
-					<td>20-男</td>
-					<td>
-						<a href="">详情</a>
-						<a href="">修改</a>
-						<a href="">删除</a>
-					</td>
-				</tr>
-				<tr>
-					<th>1001</th>
-					<td>name1</td>
-					<td>18</td>
-					<td>20-男</td>
-					<td>
-						<a href="">详情</a>
-						<a href="">修改</a>
-						<a href="">删除</a>
-					</td>
-				</tr>
+				@foreach($students as $student)
+					<tr>
+						<th>{{$student->id}}</th>
+						<td>{{$student->name}}</td>
+						<td>{{$student->age}}</td>
+						<td>{{$student['sex']}}</td>
+						<th>{{date('Y-m-d',$student->created_at)}}</th>
+						<td>
+							<a href="">详情</a>
+							<a href="">修改</a>
+							<a href="">删除</a>
+						</td>
+					</tr>
+				@endforeach
 				</tbody>
 			</table>
 		</div>
 	</div>
 
 	<!-- 分页 -->
-	<nav>
-		<ul class="pagination pull-right">
-			<li  class="previous"><a href="#">&laquo;</a></li>
-			<li><a href="#">1</a></li>
-			<li><a href="#">2</a></li>
-			<li><a href="#">3</a></li>
-			<li><a href="#">4</a></li>
-			<li><a href="#">5</a></li>
-			<li><a href="#">&raquo;</a></li>
-		</ul>
-	</nav>
+	<div class="pull-right">
+		{{$students->render()}}
+	</div>
 @stop
