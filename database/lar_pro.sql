@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2017-08-24 19:11:28
+Date: 2017-08-30 18:03:54
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -88,6 +88,47 @@ CREATE TABLE `lar_comments` (
 -- ----------------------------
 INSERT INTO `lar_comments` VALUES ('1', 'bababa', '18831605741@163.com', 'www', '这倒是个有意思的问题................', '2', '2017-08-23 09:17:23', '2017-08-23 09:17:23');
 INSERT INTO `lar_comments` VALUES ('2', 'A', 'qinminghui1230@163.com', 'dsdsds', '@bababa sdsadasdasdasdasdas', '2', '2017-08-23 09:18:31', '2017-08-23 09:18:31');
+
+-- ----------------------------
+-- Table structure for `lar_students`
+-- ----------------------------
+DROP TABLE IF EXISTS `lar_students`;
+CREATE TABLE `lar_students` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) DEFAULT NULL,
+  `age` int(11) unsigned DEFAULT '0',
+  `sex` char(5) DEFAULT NULL,
+  `created_at` int(11) DEFAULT NULL,
+  `updated_at` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of lar_students
+-- ----------------------------
+INSERT INTO `lar_students` VALUES ('1', 'Batty', '12', '1', null, null);
+INSERT INTO `lar_students` VALUES ('2', 'Toms', '13', '0', null, null);
+INSERT INTO `lar_students` VALUES ('3', 'Lorry', '15', '0', null, null);
+INSERT INTO `lar_students` VALUES ('4', 'Kity', '15', '1', null, null);
+INSERT INTO `lar_students` VALUES ('5', 'Rookos', '12', '1', '1504000647', '1504000647');
+INSERT INTO `lar_students` VALUES ('6', 'Loss', '9', '2', '1504000812', '1504000812');
+INSERT INTO `lar_students` VALUES ('7', 'Beangs', '9', '2', '1504001206', '1504001206');
+INSERT INTO `lar_students` VALUES ('8', 'df efsdf', '12', '2', '1504001367', '1504001367');
+INSERT INTO `lar_students` VALUES ('9', null, null, null, '1504003085', '1504084546');
+INSERT INTO `lar_students` VALUES ('10', 'Senali', '11', '2', '1504079015', '1504079015');
+INSERT INTO `lar_students` VALUES ('11', 'Gtilus', '9', '2', '1504079480', '1504079480');
+INSERT INTO `lar_students` VALUES ('12', null, null, null, '1504080436', '1504084540');
+INSERT INTO `lar_students` VALUES ('13', null, null, null, '1504080454', '1504084506');
+INSERT INTO `lar_students` VALUES ('14', '星灵', '15', '2', '1504080486', '1504080486');
+INSERT INTO `lar_students` VALUES ('15', '龙鸣', '13', '0', '1504083846', '1504083846');
+INSERT INTO `lar_students` VALUES ('16', '龙鸣1', '5656', '2', '1504084592', '1504085178');
+INSERT INTO `lar_students` VALUES ('17', '龙鸣', '6666', '1', '1504084607', '1504084996');
+INSERT INTO `lar_students` VALUES ('18', 'He偶偶偶偶', '13', '0', '1504084989', '1504084989');
+INSERT INTO `lar_students` VALUES ('19', 'GGG', '21', '0', '1504085682', '1504085682');
+INSERT INTO `lar_students` VALUES ('20', 'GGG', '121212', '1', '1504085697', '1504085697');
+INSERT INTO `lar_students` VALUES ('21', 'HFT', '15', '0', '1504085732', '1504085994');
+INSERT INTO `lar_students` VALUES ('22', 'ffT', '2', '2', '1504086288', '1504086288');
+INSERT INTO `lar_students` VALUES ('23', 'HFTRF', '1', '2', '1504086301', '1504087301');
 
 -- ----------------------------
 -- Table structure for `lar_users`
