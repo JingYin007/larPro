@@ -133,14 +133,4 @@ class StudentController extends Controller
         }
 
     }
-
-
-
-
-
-
-
-
-
-
 }

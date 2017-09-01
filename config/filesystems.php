@@ -53,6 +53,12 @@ return [
             'root' => storage_path('app/public'),
             'visibility' => 'public',
         ],
+        //自定义
+        'uploads' => [
+            'driver' => 'local',
+            //'root' => storage_path('app/uploads'),
+            'root' => public_path('uploads'),
+        ],
 
         's3' => [
             'driver' => 's3',
