@@ -11,7 +11,7 @@
                         {{ csrf_field() }}
 
                         <div class="form-group">
-                            <label for="password" class="col-md-4 control-label">Hello world</label>
+                            <label for="file" class="col-md-4 control-label">Hello world</label>
 
                             <div class="col-md-6">
                                 <input id="file" type="file" class="form-control" name="source">
