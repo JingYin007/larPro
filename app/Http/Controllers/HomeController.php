@@ -35,6 +35,7 @@ class HomeController extends Controller
         return view('home')->withArticles(\App\Article::all());
 
     }
+    //上传文件 功能实现方法
     public function upload(Request $request){
         if ($request->isMethod('POST')){
             $file = $request->file('source');
@@ -48,25 +49,49 @@ class HomeController extends Controller
                 $type = $file->getClientMimeType();
                 //临时绝对路径
                 $realPath = $file->getRealPath();
-                $filename = date('Y-m-d-H-i-s').'-'.uniqid().'.'.$ext;
+                $filename = uniqid().'.'.$ext;
                 $bool = Storage::disk('uploads')->put($filename,file_get_contents($realPath));
-                var_dump($bool);
+                //判断是否上传成功
+                if($bool){
+                    echo 'success';
+                }else{
+                    echo 'fail';
+                }
             }
         }
         return view('upload');
     }
 
+    /**
+     * 发送邮件
+     */
     public function mail(){
-        //发送纯文本
-       /* $this->mailer->raw('邮件内容',function ($message){
+        //$tag = $this->sendText();
+        //$tag = $this->sendHtml();
+        //TODO  $tag 判断发送是否成功，进行后续代码开发
+        //return view('mail',['title' => '你若盛开，清风自来','author' => '木心']);
+    }
+
+    /**
+     * 发送纯文本 邮件
+     */
+    public function sendText(){
+        $tag = $this->mailer->raw('从前的日色变得慢 车 马 邮件 都慢',function ($message){
             //$message->from('15117972683@163.com','逗比2号');
             $message->subject('这是邮件主题，希望您能支持');
             $message->to('930959695@qq.com');
-        });*/
-        //发送自定义网页
-        $this->mailer->send('mail',['name' => '你若盛开，清风自来'],function ($message){
-            $message->subject('Hello My Dear');
+        });
+        return $tag;
+    }
+    /**
+     * 发送自定义网页
+     */
+    public function sendHtml(){
+        $data = ['title' => '你若盛开，清风自来','author' => '木心'];
+        $tag = $this->mailer->send('mail',$data,function ($message){
+            $message->subject('Hello My Dear,let`s go');
             $message->to('930959695@qq.com');
         });
+        return $tag;
     }
 }
