@@ -103,8 +103,10 @@ Route::any('student/detail/{id}', 'StudentController@detail');
 Route::any('student/delete/{id}', 'StudentController@delete');
 
 Route::any('upload', 'HomeController@upload');
-Route::any('mail', 'HomeController@mail');
+Route::any('mail', 'TestController@mail');
+
+Route::any('cache1', 'TestController@cache1');
+Route::any('cache2', 'TestController@cache2');
 
 
-
-
+Route::any('queue', 'TestController@queue');

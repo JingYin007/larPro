@@ -31,6 +31,10 @@ return [
         'apc' => [
             'driver' => 'apc',
         ],
+        'baby' => [
+            'driver' => 'file',
+            'path' => storage_path('framework/cache'),
+        ],
 
         'array' => [
             'driver' => 'array',
