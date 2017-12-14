@@ -241,6 +241,10 @@ class ComposerStaticInit9ca7a31324ff1aa4aa80f092f9beb198
             array (
                 0 => __DIR__ . '/..' . '/mockery/mockery/library',
             ),
+            'Michelf' => 
+            array (
+                0 => __DIR__ . '/..' . '/michelf/php-markdown',
+            ),
         ),
         'J' => 
         array (
@@ -1433,6 +1437,9 @@ class ComposerStaticInit9ca7a31324ff1aa4aa80f092f9beb198
         'League\\Flysystem\\Util\\ContentListingFormatter' => __DIR__ . '/..' . '/league/flysystem/src/Util/ContentListingFormatter.php',
         'League\\Flysystem\\Util\\MimeType' => __DIR__ . '/..' . '/league/flysystem/src/Util/MimeType.php',
         'League\\Flysystem\\Util\\StreamHasher' => __DIR__ . '/..' . '/league/flysystem/src/Util/StreamHasher.php',
+        'Michelf\\Markdown' => __DIR__ . '/..' . '/michelf/php-markdown/Michelf/Markdown.php',
+        'Michelf\\MarkdownExtra' => __DIR__ . '/..' . '/michelf/php-markdown/Michelf/MarkdownExtra.php',
+        'Michelf\\MarkdownInterface' => __DIR__ . '/..' . '/michelf/php-markdown/Michelf/MarkdownInterface.php',
         'Mockery' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegration' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php',
         'Mockery\\Adapter\\Phpunit\\MockeryTestCase' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryTestCase.php',
